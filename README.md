@@ -1,11 +1,11 @@
 Overview:
-AI-enabled dual-drone system for real-time survivor detection, GPS-based mapping, and medical kit delivery using computer vision and telemetry.
+This project is an AI-enabled dual-drone system designed to assist in disaster response operations. It performs real-time aerial surveillance to detect survivors using computer vision techniques and maps their locations using GPS-based geotagging. The system also enables delivery of essential medical kits using a servo-based payload mechanism, integrating detection, mapping, and response into a unified solution.
 
 Problem:
-Locating survivors in disaster zones is slow and difficult due to inaccessible terrain and lack of real-time data.
+In disaster scenarios such as floods, earthquakes, or landslides, locating survivors quickly is a major challenge due to inaccessible terrain and lack of real-time information. Traditional search operations are time-consuming, resource-intensive, and often delayed, reducing the chances of timely rescue and assistance.
 
 Solution:
-Uses YOLO-based detection on live video and GPS telemetry to identify and map survivor locations. Generates KML files for visualization and enables servo-based payload delivery for rapid assistance.
+The system uses a YOLO-based deep learning model to perform real-time human detection from live RTSP video streams. A GPS module provides location data, which is processed by the flight controller along with orientation parameters such as altitude and yaw. This telemetry data is transmitted via MAVLink to the ground system, where detected pixel positions are converted into real-world GPS coordinates. Multiple readings are averaged for accuracy, and results are stored and visualized using dynamically generated KML files. Additionally, a servo-based hatch mechanism enables the drone to deliver medical kits directly to detected survivors.
 
 Features:
 1. Real-time human detection using YOLO
